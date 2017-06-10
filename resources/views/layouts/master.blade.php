@@ -39,17 +39,17 @@
 
     <div class="container">
         
-        @include('partials.header')
+        
         
         <div class="row">
             
                           
-            <div class="col-sm-8 blog-main">
-            @yield('content')       
             
-            @include('partials.pager')   
-            </div>
-            @include('partials.sider-bar')
+            @yield('content')       
+
+             
+            
+            
 
         </div><!-- /.row -->
 
