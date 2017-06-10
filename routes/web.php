@@ -19,6 +19,11 @@ Route::get('/login', function () {
     return view('auth/login');
 });
 
-Route::get('/register', function () {
-    return view('auth/register');
-});
+Route::get('/register', function () { return view('auth/register');});
+
+// Route::post('/register',['as' => 'register', 'uses' => 'Auth\RegisterController@create']);
+
+Route::post('/register',['as' => 'register', 'uses' => 'Auth\RegisterController@create']);
+
+Route::post('/login',['as' => 'login', 'uses' => 'Auth\LoginController@login']);
+
