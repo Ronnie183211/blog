@@ -3,7 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Post;
 
 class StoreBlogPost extends FormRequest
 {
@@ -22,8 +23,9 @@ class StoreBlogPost extends FormRequest
      *
      * @return array
      */
-    public function rules(Request $request)
+    public function rules()
     {   
+        $id = $this->post;
         
         switch($this->method())
         {
@@ -40,9 +42,13 @@ class StoreBlogPost extends FormRequest
             case 'PUT':
             {
                 return [
-                    'title' => 'required|unique:posts|max:255,title,'.$request->title,
-                    'active' => 'required,active,'.$request->active,
-                    'body' => 'required,body,'.$request->body,
+                    'title' => [
+                        'required',
+                        'max:255',
+                        Rule::unique('posts')->ignore($id)
+                    ],
+                    'active' => 'required',
+                    'body' => 'required',
                 ];
             }
 
