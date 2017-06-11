@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class StoreBlogPost extends FormRequest
 {
@@ -21,14 +22,35 @@ class StoreBlogPost extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
-        return [
-            'title' => 'required|unique:posts|max:255',
-            'active' => 'required',
-            'body' => 'required',
-        ];
+    public function rules(Request $request)
+    {   
+        
+        switch($this->method())
+        {
+            case 'POST':
+            
+            {
+                return [
+                    'title' => 'required|unique:posts|max:255',
+                    'active' => 'required',
+                    'body' => 'required',
+                    ];
+            }
+
+            case 'PUT':
+            {
+                return [
+                    'title' => 'required|unique:posts|max:255,title,'.$request->title,
+                    'active' => 'required,active,'.$request->active,
+                    'body' => 'required,body,'.$request->body,
+                ];
+            }
+
+            default:break;
+        }
+        
     }
+
 
 
 }
