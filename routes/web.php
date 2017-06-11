@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+	//get login form view
+	Route::get('/', ['uses' => 'PostController@index']);
 
-Route::get('/login', function () {
-    return view('auth/login');
-});
+	// Authentication Routes
+	Auth::routes();
 
-Route::get('/register', function () { return view('auth/register');});
 
-// Route::post('/register',['as' => 'register', 'uses' => 'Auth\RegisterController@create']);
+	Route::group(['middleware' => ['auth']], function()
+	{
+		Route::resource('posts', 'PostController');
 
-Route::post('/register',['as' => 'register', 'uses' => 'Auth\RegisterController@create']);
+		Route::get('/home', ['uses' => 'PostController@home']);
 
-Route::post('/login',['as' => 'login', 'uses' => 'Auth\LoginController@login']);
-
+		Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+	});

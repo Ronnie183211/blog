@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/showLoginForm';
 
     /**
      * Create a new controller instance.
@@ -56,23 +56,5 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(Request $request)
-    {   
-        $data = $request->all();
-        
-        User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-
-        return view('auth\login');
-    }
 
 }

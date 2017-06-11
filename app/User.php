@@ -27,7 +27,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // protected function findByEmail($email){
-    //     $this->
-    // }
 }
