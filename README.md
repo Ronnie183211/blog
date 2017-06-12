@@ -1,4 +1,4 @@
-Blog system
+<h2>Blog</h2>
 
 Admin loggin system
 Admin can view all existing blog posts or see a message "no blogs are available."
