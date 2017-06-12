@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "66cf53f94f8f29b48910d4479ee52ee0",
-    "content-hash": "ee1b6e5d8a0011fc9b2b2028677c47a2",
+    "hash": "8a03170f82f0aeb4c88f6cf61ef7196b",
+    "content-hash": "49f4ac406120ee675aab6ba5712855e6",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -626,6 +626,76 @@
                 "storage"
             ],
             "time": "2017-04-28 10:15:08"
+        },
+        {
+            "name": "magyarjeti/laravel-lipsum",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magyarjeti/laravel-lipsum.git",
+                "reference": "defb47d4931cd6ba724e0f62e037c5c463e12431"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magyarjeti/laravel-lipsum/zipball/defb47d4931cd6ba724e0f62e037c5c463e12431",
+                "reference": "defb47d4931cd6ba724e0f62e037c5c463e12431",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.0",
+                "magyarjeti/loripsum-client": "v2.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Magyarjeti\\LaravelLipsum": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Lorem ipsum generator for Laravel Framework",
+            "time": "2015-02-09 13:54:32"
+        },
+        {
+            "name": "magyarjeti/loripsum-client",
+            "version": "v2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magyarjeti/loripsum-client.git",
+                "reference": "ce686fb76ee41baeb65fb8c9474dbbad7e54a03e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magyarjeti/loripsum-client/zipball/ce686fb76ee41baeb65fb8c9474dbbad7e54a03e",
+                "reference": "ce686fb76ee41baeb65fb8c9474dbbad7e54a03e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.2",
+                "phpunit/phpunit": "4.3.1",
+                "squizlabs/php_codesniffer": "2.0.0RC2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Magyarjeti\\Loripsum": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Lorem ipsum generator.",
+            "keywords": [
+                "ipsum",
+                "lipsum",
+                "lorem",
+                "loripsum"
+            ],
+            "time": "2014-10-09 15:07:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -1649,16 +1719,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
                 "shasum": ""
             },
             "require": {
@@ -1670,7 +1740,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -1704,7 +1774,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2017-06-09 14:24:12"
         },
         {
             "name": "symfony/process",
@@ -3539,7 +3609,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "magyarjeti/laravel-lipsum": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

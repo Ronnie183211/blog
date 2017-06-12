@@ -180,6 +180,9 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         //Html & Form
         Collective\Html\HtmlServiceProvider::class,
+
+        //Lipsum
+        Magyarjeti\LaravelLipsum\LipsumServiceProvider::class,
     ],
 
     /*
@@ -231,6 +234,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Lipsum' => Magyarjeti\LaravelLipsum\LipsumFacade::class,
     ],
 
 ];
