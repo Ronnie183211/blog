@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    
+    use SoftDeletes;
 	/**
      * The attributes that are mass assignable.
      *
@@ -24,7 +25,8 @@ class Post extends Model
      * @var array
      */
     protected $dates = [
-        'published_at'
+        'published_at',
+        'deleted_at'
     ];
 
 	/**

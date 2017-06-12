@@ -123,9 +123,9 @@ class PostController extends Controller
         $post->active = $request->active;
 
         $post->body = $request->body;
-       
+        
         $post->published_at = Carbon\Carbon::now();
-
+        
         $post->user_id = Auth::user()->id;
 
         $post->save();
@@ -141,6 +141,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->trashed();
+
+        return redirect()->route('posts.index');
     }
 }
